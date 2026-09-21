@@ -3,275 +3,399 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Para ti 🌻</title>
+<title>Para Adri 💘</title>
 
 <style>
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #090016, #21002f, #3b174d);
+    font-family: Georgia, 'Times New Roman', serif;
+    background:
+        radial-gradient(circle at top, #4b2368 0%, #24102f 45%, #100817 100%);
     color: white;
+    overflow-x: hidden;
 }
 
-/* Pantallas */
-
-.pantalla {
-    width: 100%;
+.screen {
     min-height: 100vh;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    text-align: center;
-    padding: 25px;
-
+    justify-content: center;
+    padding: 30px 18px;
     position: relative;
-    z-index: 10;
 }
 
-.contenido {
-    max-width: 700px;
+.card {
+    width: min(700px, 94%);
+    padding: 42px 25px;
+    text-align: center;
+    border-radius: 28px;
+    background: rgba(30, 10, 42, 0.78);
+    border: 1px solid rgba(255, 220, 100, 0.25);
+    box-shadow: 0 0 45px rgba(255, 193, 70, 0.15);
+    backdrop-filter: blur(8px);
+    z-index: 5;
 }
 
-/* Corazón */
-
-.corazon {
-    font-size: 70px;
-    animation: latido 1.5s infinite;
-    margin-bottom: 20px;
+.heart {
+    font-size: 65px;
+    animation: latido 1.4s infinite;
+    margin-bottom: 10px;
 }
 
 @keyframes latido {
-
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 
-/* Títulos */
-
 h1 {
-    color: #ffd83d;
-    font-size: clamp(32px, 7vw, 60px);
-    margin-bottom: 20px;
+    color: #ffd95a;
+    font-size: clamp(30px, 7vw, 52px);
+    margin: 10px 0;
+}
 
-    text-shadow:
-        0 0 10px rgba(255,216,61,.5),
-        0 0 30px rgba(255,216,61,.3);
+h2 {
+    color: #ffd95a;
+    font-size: clamp(25px, 5vw, 38px);
 }
 
 p {
-    font-size: 20px;
-    line-height: 1.7;
-    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 18px;
 }
 
-/* Botón */
+.subtitle {
+    font-size: 20px;
+    color: #f8dca0;
+}
 
 button {
+    margin-top: 25px;
+    padding: 15px 28px;
     border: none;
-    padding: 16px 35px;
-
-    border-radius: 50px;
-
-    background: #ffd83d;
-    color: #301238;
-
-    font-size: 18px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ffd95a, #f5a623);
+    color: #351542;
     font-weight: bold;
-
+    font-size: 17px;
     cursor: pointer;
-
-    box-shadow: 0 0 20px rgba(255,216,61,.5);
-
+    box-shadow: 0 5px 20px rgba(255, 205, 80, .3);
     transition: .3s;
 }
 
 button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 35px rgba(255,216,61,.8);
+    transform: scale(1.06);
 }
-
-/* Segunda pantalla */
 
 #regalo {
     display: none;
+    flex-direction: column;
 }
 
-.carta {
-    background: rgba(255,255,255,.08);
-
-    border: 1px solid rgba(255,255,255,.15);
-
-    backdrop-filter: blur(10px);
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 0 40px rgba(255,216,61,.15);
-
-    animation: aparecer 2s ease;
+.section {
+    width: min(850px, 94%);
+    margin: 30px auto;
+    padding: 35px 24px;
+    border-radius: 28px;
+    background: rgba(28, 9, 39, .78);
+    border: 1px solid rgba(255, 216, 92, .22);
+    box-shadow: 0 0 35px rgba(255, 193, 70, .12);
+    text-align: center;
+    position: relative;
+    z-index: 3;
 }
 
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
+.section h2 {
+    margin-top: 0;
 }
 
-/* Flores */
-
-.flor {
-    position: fixed;
-
-    top: -80px;
-
-    z-index: 5;
-
-    pointer-events: none;
-
-    animation-name: caer;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.message {
+    text-align: left;
+    white-space: pre-line;
 }
 
-@keyframes caer {
-
-    from {
-        transform: translateY(-100px) rotate(0deg);
-    }
-
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-
+.date {
+    color: #ffd95a;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-/* Estrellas */
-
-.estrella {
-    position: fixed;
-
-    color: #fff4a3;
-
-    animation: brillar 2s infinite alternate;
-
-    z-index: 1;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 25px;
 }
 
-@keyframes brillar {
-
-    from {
-        opacity: .2;
-    }
-
-    to {
-        opacity: 1;
-    }
-
+.gallery img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 217, 90, .35);
+    box-shadow: 0 8px 25px rgba(0,0,0,.35);
+    transition: .4s;
 }
 
-/* Final */
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.song-box {
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 20px;
+    background: rgba(255, 217, 90, .08);
+}
+
+.song-title {
+    color: #ffd95a;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
 
 .final {
-    color: #ffd83d;
+    color: #ffd95a;
     font-size: 25px;
     font-weight: bold;
 }
 
-</style>
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    animation: flotar linear forwards;
+}
 
+@keyframes flotar {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-15vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: #fff1a8;
+    animation: brillo 2s infinite alternate;
+}
+
+@keyframes brillo {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 330px;
+    }
+
+    .card {
+        padding: 35px 18px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- PRIMERA PANTALLA -->
+<div class="stars" id="stars"></div>
 
-<section class="pantalla" id="inicio">
+<section class="screen" id="inicio">
+    <div class="card">
+        <div class="heart">💛</div>
 
-    <div class="contenido">
+        <h1>Tengo un pequeño regalo para ti…</h1>
 
-        <div class="corazon">
-            💛
-        </div>
-
-        <h1>
-            Tengo un pequeño regalo para ti...
-        </h1>
+        <p class="subtitle">
+            Hay algo que quiero darte este 21 de septiembre 🌻
+        </p>
 
         <p>
-            Hay algo que quiero darte este
-            <strong>21 de septiembre</strong> 🌻
+            Algo hecho especialmente para ti, Adri 💘
         </p>
 
         <button onclick="abrirRegalo()">
             Abrir mi regalo 🎁
         </button>
-
     </div>
-
 </section>
 
 
-<!-- SEGUNDA PANTALLA -->
+<section id="regalo">
 
-<section class="pantalla" id="regalo">
+    <div class="section">
+        <div class="heart">💘</div>
 
-    <div class="contenido carta">
+        <h1>Para ti, Adri</h1>
 
-        <div class="corazon">
-            🌻
+        <p class="date">
+            21 de septiembre 🌻
+        </p>
+
+        <p>
+            Desde el <strong>2 de agosto de 2026</strong> comenzó
+            una historia que quiero seguir escribiendo contigo. ❤️
+        </p>
+    </div>
+
+
+    <div class="section">
+
+        <h2>Quiero decirte algo... 💌</h2>
+
+        <div class="message">
+
+Quiero hacerte algo diferente para ti, cariño; algo que quieras guardar y volver a ver cuando quieras.
+
+No necesito una fecha especial para recordarte lo mucho que significas para mí, pero hoy quise aprovechar este 21 de septiembre para darte un pequeño detalle hecho con mucho cariño y amor. 💕🌻
+
+Gracias por estar en mi vida, por cada momento que hemos compartido, por cada sonrisa y por cada recuerdo que hemos creado juntos en este tiempo que nos conocemos.
+
+Siento que nos hemos conocido desde otras vidas, y que poco a poco hemos ido creando nuestra propia historia juntos. Y eso me llena de felicidad, porque sé que te tengo a ti.
+
+Te amo mucho, mi corazoncito de meloncito 💛🍈
+
+Juntos por siempre y para siempre, juntos hasta el final, hasta el infinito y más allá. ♾️💘💞
+
+Nadie podrá contra nosotros y nadie nos podrá separar.
+
+Together forever.
+
+“내 모든 순간은 너로 가득 차 있어” 💞
+
+Con amor, para Adri. ❤️
+
         </div>
+    </div>
 
-        <h1>
-            Para ti, mi amor 💛
-        </h1>
+
+    <div class="section">
+
+        <h2>Nuestra historia 📸</h2>
 
         <p>
-            Hoy quiero regalarte flores amarillas,
-            pero más que unas flores, quiero regalarte
-            un pequeño recordatorio de lo especial
-            que eres para mí.
+            Algunos momentos que quiero guardar para siempre contigo. 💕
+        </p>
+
+        <div class="gallery">
+
+            <img src="WhatsApp%20Image%202026-09-20%20at%209.18.28%20PM%20(1).jpeg"
+                 alt="Nuestro recuerdo 1">
+
+            <img src="WhatsApp%20Image%202026-09-20%20at%209.18.28%20PM%20(2).jpeg"
+                 alt="Nuestro recuerdo 2">
+
+            <img src="WhatsApp%20Image%202026-09-20%20at%209.18.28%20PM%20(3).jpeg"
+                 alt="Nuestro recuerdo 3">
+
+            <img src="WhatsApp%20Image%202026-09-20%20at%209.18.28%20PM%20(4).jpeg"
+                 alt="Nuestro recuerdo 4">
+
+        </div>
+    </div>
+
+
+    <div class="section">
+
+        <h2>Una canción para ti 🎵</h2>
+
+        <div class="song-box">
+
+            <div class="song-title">
+                Turning Page
+            </div>
+
+            <p>
+                Sleeping At Last
+            </p>
+
+            <p>
+                🎶 Una canción que quiero que forme parte
+                de este pequeño recuerdo para nosotros. 💞
+            </p>
+
+            <a
+                href="https://open.spotify.com/track/4n3Nfa3LhtdwrC9UfplS07"
+                target="_blank"
+                style="
+                display:inline-block;
+                margin-top:15px;
+                padding:13px 24px;
+                border-radius:25px;
+                background:#ffd95a;
+                color:#351542;
+                text-decoration:none;
+                font-weight:bold;
+                ">
+                🎵 Escuchar Turning Page
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="section">
+
+        <h2>Y esto apenas comienza... ♾️</h2>
+
+        <p>
+            Quiero seguir creando recuerdos, sonrisas,
+            aventuras y momentos contigo.
         </p>
 
         <p>
-            Gracias por estar en mi vida,
-            por hacerme sonreír y por compartir
-            tantos momentos conmigo.
-        </p>
-
-        <p>
-            Espero que estas flores puedan
-            sacarte una sonrisa. 🌻
+            Que nuestra historia siga creciendo
+            y que podamos mirar atrás algún día
+            y recordar todo lo que hemos vivido juntos. ❤️
         </p>
 
         <p class="final">
-            Feliz 21 de septiembre ❤️
+            Feliz 21 de septiembre, mi amor. 🌻💘
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="heart">💞</div>
+
+        <h2>Juntos por siempre</h2>
+
+        <p class="final">
+            Hasta el final.<br>
+            Hasta el infinito y más allá. ♾️
+        </p>
+
+        <p>
+            Te amo, Adri. ❤️
         </p>
 
     </div>
@@ -281,8 +405,6 @@ button:hover {
 
 <script>
 
-/* Abrir regalo */
-
 function abrirRegalo() {
 
     document.getElementById("inicio").style.display = "none";
@@ -290,75 +412,80 @@ function abrirRegalo() {
     document.getElementById("regalo").style.display = "flex";
 
     crearFlores();
-
     crearEstrellas();
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* Crear flores */
-
 function crearFlores() {
 
-    for (let i = 0; i < 35; i++) {
+    const flores = ["🌻", "🌻", "🌼", "🌸", "💛", "💘"];
+
+    for (let i = 0; i < 25; i++) {
 
         const flor = document.createElement("div");
 
-        flor.className = "flor";
+        flor.className = "floating";
 
-        flor.innerHTML = "🌻";
+        flor.textContent =
+            flores[Math.floor(Math.random() * flores.length)];
 
         flor.style.left =
             Math.random() * 100 + "vw";
 
         flor.style.fontSize =
-            (20 + Math.random() * 35) + "px";
+            (18 + Math.random() * 22) + "px";
 
         flor.style.animationDuration =
-            (4 + Math.random() * 5) + "s";
+            (7 + Math.random() * 8) + "s";
 
         flor.style.animationDelay =
             Math.random() * 5 + "s";
 
         document.body.appendChild(flor);
 
+        setTimeout(() => {
+            flor.remove();
+        }, 16000);
     }
-
 }
 
 
-/* Crear estrellas */
-
 function crearEstrellas() {
 
-    for (let i = 0; i < 40; i++) {
+    const contenedor = document.getElementById("stars");
 
-        const estrella = document.createElement("div");
+    for (let i = 0; i < 70; i++) {
 
-        estrella.className = "estrella";
+        const estrella = document.createElement("span");
 
-        estrella.innerHTML = "✦";
+        estrella.className = "star";
+
+        estrella.textContent = "✦";
 
         estrella.style.left =
-            Math.random() * 100 + "vw";
+            Math.random() * 100 + "%";
 
         estrella.style.top =
-            Math.random() * 100 + "vh";
+            Math.random() * 100 + "%";
 
         estrella.style.fontSize =
-            (5 + Math.random() * 15) + "px";
+            (6 + Math.random() * 10) + "px";
 
         estrella.style.animationDelay =
             Math.random() * 2 + "s";
 
-        document.body.appendChild(estrella);
-
+        contenedor.appendChild(estrella);
     }
-
 }
+
+crearEstrellas();
 
 </script>
 
 </body>
-
 </html>
